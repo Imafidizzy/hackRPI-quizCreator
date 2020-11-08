@@ -7,6 +7,7 @@ from spacy.matcher import Matcher
 
 def getPDFText(filename):
     #Open pdf in read binary format. Then read the file
+    print('in PDF')
     pdfFileObj = open(filename, 'rb') 
     pdfReader = PdfFileReader(pdfFileObj)
     #if pdf is encrypted, return error
@@ -98,7 +99,7 @@ def results(filename):
     #Create an id then upload to cockroachDB.
     #Then res back the id to go to.
 
-results('../../test/Population_Dynamic_Notes.pdf')
+#results('./test/Population_Dynamic_Notes.pdf')
 
 #Rulesets
 #Can have multiple proper nouns if they're compounded

@@ -4,6 +4,10 @@ pip freeze > requirements.txt
 
 python3 app/manage.py runserver
 
+python3 -m pip install PyPDF2  
+
+Grabbing files from Django, you use (./ to get the root directory)
+
 
 limiting VERB ROOT
 factor PROPN dobj
