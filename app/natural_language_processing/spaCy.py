@@ -1,5 +1,5 @@
 import spacy
-import PyPDF2
+from PyPDF2 import PdfFileReader
 import docx
 import os
 from spacy import displacy
@@ -8,12 +8,12 @@ from spacy.matcher import Matcher
 def getPDFText(filename):
     #Open pdf in read binary format. Then read the file
     pdfFileObj = open(filename, 'rb') 
-    pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+    pdfReader = PdfFileReader(pdfFileObj)
     #if pdf is encrypted, return error
     if(pdfReader.isEncrypted):
         print('Error, cannot process as PDF is encrypted!')
     else:
-        return pdfReader.extractText()
+        return pdfReader.getPage(0).extractText()
 
 def getDOCXText(filename):
     doc = docx.Document(filename)
@@ -41,7 +41,6 @@ def spacey(filename):
     else:
         print('Not a supported file type!')
         return
-    
     doc = nlp(text)
     resultsArray = []
     tempString = []
@@ -94,9 +93,12 @@ def results(filename):
     result = spacey(filename)
     for x in range(len(result)):
         result[x] = 'What is "' + result[x] + '"'
+    print(result)
     return(result)
+    #Create an id then upload to cockroachDB.
+    #Then res back the id to go to.
 
-results('../../test/Population_Dynamic_Notes.docx')
+results('../../test/Population_Dynamic_Notes.pdf')
 
 #Rulesets
 #Can have multiple proper nouns if they're compounded

@@ -2,6 +2,8 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 pip freeze > requirements.txt
 
+python3 app/manage.py runserver
+
 
 limiting VERB ROOT
 factor PROPN dobj

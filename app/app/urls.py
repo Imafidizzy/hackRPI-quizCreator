@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 from url_checker.views import check_url, FrontendAppView
+from natural_language_processing.spaCy import results
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('url_checker', check_url),
+    path('api/submit', results),
     url(r'^', FrontendAppView.as_view())
 ]
