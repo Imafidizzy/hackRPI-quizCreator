@@ -4,6 +4,10 @@ import axios from 'axios';
 import React,{Component} from 'react';
 
 class App extends Component{
+  constructor (){
+    super();
+  }
+  
   state = {
     slectedFile: null
   };
@@ -42,6 +46,7 @@ class App extends Component{
     };
     
   }
+
   render (){
     return (
       <div>
@@ -54,6 +59,12 @@ class App extends Component{
           </button>
         </div>
         {this.fileData()}
+        <h3 style={this.getStyle1()}>Search Quizzes Here</h3>
+        <div className="App"></div>
+           <span className="Controls">
+             <button><strong>Search</strong></button>
+           </span>
+           <textarea rows="5" className="Text" />
       </div>
     );
   };
@@ -63,6 +74,7 @@ class App extends Component{
         background: '#003366',
         color: '#ffffff',
         padding: '50px',
+        borderTop: '1px #ccc dotted',
         borderBottom: '1px #ccc dotted',
         fontFamily: 'Arial',
         textAlign: 'center'

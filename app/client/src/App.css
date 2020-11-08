@@ -23,6 +23,17 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.Controls {
+  width: 50vw;
+  text-align: left;
+  padding: 5px;
+}
+
+.Text {
+  font-size: calc(5px +2vmin);
+  width: 50vw;
+  padding: 10px;
+}
 
 .App-link {
   color: #61dafb;
