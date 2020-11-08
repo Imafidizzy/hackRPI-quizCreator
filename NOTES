@@ -1,1 +1,34 @@
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+pip freeze > requirements.txt
+
+
+limiting VERB ROOT
+factor PROPN dobj
+
+(GOOD)
+density NOUN compound
+- PUNCT punct
+dependent PROPN compound
+factor PROPN appos
+
+(GOOD)
+competition NOUN ROOT
+
+(GOOD)
+interspecific PROPN compound
+competition NOUN ROOT
+
+(GOOD)
+intraspecific PROPN compound
+competition NOUN ROOT
+
+(GOOD)
+allee PROPN compound
+effect PROPN nsubj
+
+(GOOD)
+minimum PROPN amod => adjectival modifier
+viable PROPN compound
+population PROPN compound
+size PROPN attr
